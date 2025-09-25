@@ -1,0 +1,38 @@
+.tank-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.tank-image-wrapper {
+  position: relative;
+  width: 161px;  
+  height: auto; 
+}
+
+.tank-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3b82f6; /* kolor wody */
+  transition: height 0.5s;
+  z-index: 1;
+}
+
+.tank-label,
+.tank-value {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.tank-value {
+  font-weight: bold;
+}

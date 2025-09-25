@@ -1,0 +1,17 @@
+.process-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* żeby układy były wyśrodkowane do lewej */
+  gap: 100px;              /* odstęp między wierszami */
+}
+
+.process-line {
+  display: flex;
+  align-items: center;
+}
+
+.connector {
+  width: 100px;       /* długość linii łączącej elementy */
+  height: 3px;        /* grubość linii */
+  background: #333;   /* kolor linii */
+}

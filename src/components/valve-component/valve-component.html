@@ -1,0 +1,8 @@
+<div class="valve-container">
+  <div class="valve-label">{{ name }}</div>
+  <img src="assets/images/valve.png"
+       alt="Zawór"
+       class="valve-image"
+       [class.open]="state === 'OPEN'"
+       [class.closed]="state === 'CLOSED'">
+</div>

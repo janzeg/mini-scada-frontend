@@ -1,0 +1,8 @@
+<div class="mixer-container">
+  <div class="mixer-label">{{ name }}</div>
+  <img src="assets/images/mixer.png"
+       alt="Mieszalnik"
+       class="mixer-image"
+       [class.on]="state === 'ON'"
+       [class.off]="state === 'OFF'">
+</div>

@@ -1,0 +1,8 @@
+<div class="pump-container">
+  <div class="pump-label">{{ name }}</div>
+  <img src="assets/images/pump.png"
+       alt="Pompa"
+       class="pump-image"
+       [class.on]="state === 'ON'"
+       [class.off]="state === 'OFF'">
+</div>

@@ -1,0 +1,28 @@
+.mixer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #555;
+}
+
+.mixer-label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.mixer-image {
+  width: 240px;  /* dostosuj do grafiki */
+  height: auto;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+/* Efekty ON/OFF */
+.mixer-image.on {
+  filter: hue-rotate(120deg) brightness(1.2); /* np. zielonkawe podświetlenie */
+}
+
+.mixer-image.off {
+  opacity: 0.6; /* przygaszony wygląd */
+}
