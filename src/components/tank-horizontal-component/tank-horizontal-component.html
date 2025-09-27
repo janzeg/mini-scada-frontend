@@ -1,0 +1,12 @@
+<div class="tank-container">
+  <!-- Grafika zbiornika -->
+  <div class="tank-image-wrapper">
+    <img src="assets/images/tank-horizontal.png" alt="Zbiornik" class="tank-image">
+    <!-- poziom cieczy -->
+    <div class="level" [style.height.%]="level"></div>
+  </div>
+
+  <!-- Label i wartość -->
+  <div class="tank-label">{{ name }}</div>
+  <div class="tank-value">{{ level | number:'1.0-0' }} L</div>
+</div>

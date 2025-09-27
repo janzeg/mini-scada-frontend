@@ -1,19 +1,81 @@
 <div class="process-container">
-  <!-- pierwszy wiersz -->
-  <div class="process-line">
-    <app-valve-component></app-valve-component>
-    <div class="connector"></div>
-    <app-pump-component></app-pump-component>
-    <div class="connector"></div>
-    <app-tank-component></app-tank-component>
+
+  <div class="tanks-container">
+    
+    <div class="tank-section">
+      <div class="tank-input">
+
+        <div class="tank-input-line">
+          <img src="assets/images/arrowhead.png" class="arrowhead">
+          <div class="connector"></div>
+          <app-valve-component></app-valve-component>
+          <div class="connector"></div>
+          <app-pump-component></app-pump-component>
+          <div class="connector"></div>
+        </div>
+
+        <div class="tank-input-line">
+          <img src="assets/images/arrowhead.png" class="arrowhead">
+          <div class="connector"></div>
+          <app-valve-component></app-valve-component>
+          <div class="connector"></div>
+          <app-pump-component></app-pump-component>
+          <div class="connector"></div>
+        </div>
+      </div>
+
+      <app-tank-component></app-tank-component>
+
+      <div class="tank-output-line-one">
+        <div class="connector"></div>
+        <app-valve-component></app-valve-component>
+        <div class="connector"></div>
+      </div>
+    </div>
+
+
+
+    
+    <div class="tank-section">
+      <div class="tank-input">
+
+        <div class="tank-input-line">
+          <img src="assets/images/arrowhead.png" class="arrowhead">
+          <div class="connector"></div>
+          <app-valve-component></app-valve-component>
+          <div class="connector"></div>
+          <app-pump-component></app-pump-component>
+          <div class="connector"></div>
+        </div>
+
+        <div class="tank-input-line">
+          <img src="assets/images/arrowhead.png" class="arrowhead">
+          <div class="connector"></div>
+          <app-valve-component></app-valve-component>
+          <div class="connector"></div>
+          <app-pump-component></app-pump-component>
+          <div class="connector"></div>
+        </div>
+      </div>
+
+      <app-tank-component></app-tank-component>
+
+      <div class="tank-output-line-two">
+        <div class="connector"></div>
+        <app-valve-component></app-valve-component>
+        <div class="connector"></div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- drugi wiersz -->
-  <div class="process-line">
-    <app-valve-component></app-valve-component>
-    <div class="connector"></div>
-    <app-pump-component></app-pump-component>
-    <div class="connector"></div>
-    <app-tank-component></app-tank-component>
-  </div>
-</div>
+  <app-mixer-component></app-mixer-component>
+  <div class="connector"></div>
+  
+  <app-valve-component></app-valve-component>
+  <div class="connector"></div>
+  <app-pump-component></app-pump-component>
+  <div class="connector"></div>
+  <app-tank-horizontal-component></app-tank-horizontal-component>
+
+</div> 

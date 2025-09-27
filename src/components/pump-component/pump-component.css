@@ -13,16 +13,18 @@
 }
 
 .pump-image {
-  width: 60px;   /* dopasuj do grafiki */
+  width: 43px;   /* dopasuj do grafiki */
   height: auto;
   transition: filter 0.3s, opacity 0.3s;
+  padding-bottom: 14px;
 }
 
-/* Efekty ON/OFF */
+/* Efekty ON/OFF 
 .pump-image.on {
-  filter: hue-rotate(200deg) brightness(1.2); /* np. podświetlenie na niebiesko */
+  filter: hue-rotate(200deg) brightness(1.2); 
 }
 
 .pump-image.off {
-  opacity: 0.6; /* przygaszony wygląd */
+  opacity: 0.6; 
 }
+*/

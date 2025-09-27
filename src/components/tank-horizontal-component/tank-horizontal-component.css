@@ -3,11 +3,12 @@
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
+  padding-top: 40px;
 }
 
 .tank-image-wrapper {
   position: relative;
-  width: 137px;  
+  width: 325px;  
   height: auto; 
 }
 

@@ -13,16 +13,17 @@
 }
 
 .valve-image {
-  width: 80px;     /* dopasuj do grafiki */
+  width: 51px;     /* dopasuj do grafiki */
   height: auto;
   transition: filter 0.3s, opacity 0.3s;
+  padding-bottom: 14px;
 }
 
-/* Efekty dla stanów zaworu */
+/* Efekty dla stanów zaworu 
 .valve-image.open {
-  filter: hue-rotate(180deg) brightness(1.2); /* np. podświetlenie na niebiesko */
-}
+  filter: hue-rotate(180deg) brightness(1.2); 
 
 .valve-image.closed {
-  opacity: 0.7; /* przygaszony wygląd */
+  opacity: 0.7; 
 }
+*/
