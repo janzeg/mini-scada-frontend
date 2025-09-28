@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* żeby układy były wyśrodkowane do lewej */
-  gap: 100px;              /* odstęp między wierszami */
+  gap: 10px;              /* odstęp między wierszami */
 }
 
 .tank-input-line {
@@ -46,8 +46,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* żeby układy były wyśrodkowane do lewej */
-  gap: 50px;              /* odstęp między wierszami */
-  padding-bottom: 40px;
+  gap: 2px;              /* odstęp między wierszami */
+  padding-bottom: 60px;
 }
 
 

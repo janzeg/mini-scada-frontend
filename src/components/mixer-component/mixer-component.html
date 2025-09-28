@@ -1,8 +1,26 @@
 <div class="mixer-container">
-  <div class="mixer-label">{{ name }}</div>
-  <img src="assets/images/mixer.png"
-       alt="Mieszalnik"
-       class="mixer-image"
-       [class.on]="state === 'ON'"
-       [class.off]="state === 'OFF'">
+
+  <!-- Label i wartość -->
+  <div class="mixer-value">{{ level | number:'1.0-0' }} L</div>
+
+  <!-- prostokąt z napisem ON/OFF -->
+  <div class="mixer-indicator" [class.on]="state === 'ON'" [class.off]="state === 'OFF'">
+    {{ state === 'ON' ? 'ON' : 'OFF' }}
+  </div>
+
+  <!-- Grafika zbiornika -->
+  <div class="mixer-image-wrapper">
+    <img src="assets/images/mixer.png" alt="Zbiornik" class="mixer-image">
+
+    <!-- pionowy wskaźnik -->
+    <div class="indicator">
+      <div class="indicator-fill" [style.height.%]="level"></div>
+    </div>
+
+    <div class="mixer-label">{{ name }}</div>
+     
+    <!-- <div class="level" [style.height.%]="level"></div> -->
+  </div>
+
+  
 </div>

@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ValveComponent {
   @Input() name: string = 'Zawór';
-  @Input() state: 'OPEN' | 'CLOSED' = 'CLOSED';
+  state: 'OPEN' | 'CLOSED' = 'CLOSED';
 }

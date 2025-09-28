@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 80px;
 }
 
 .tank-image-wrapper {
@@ -17,22 +20,50 @@
   display: block;
 }
 
-.level {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #3b82f6; /* kolor wody */
-  transition: height 0.5s;
-  z-index: 1;
-}
-
-.tank-label,
 .tank-value {
   margin-top: 5px;
   text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  width: 51px;
+  padding: 2px 0;
+  margin-bottom: 6px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  background-color: white;
+  color: #4640D4; 
 }
 
-.tank-value {
+.tank-label {
+  position: absolute;
+  top: 42%;             /* pionowe wyśrodkowanie */
+  left: 42%;            /* poziome wyśrodkowanie */
+  transform: translate(-50%, -50%); /* dokładne wyśrodkowanie */
   font-weight: bold;
+  text-align: center;
+}
+
+
+/* ramka wskaźnika */
+.indicator {
+  position: absolute;
+  bottom: 52px;          /* odsuń od dna zbiornika */
+  left: 84%;
+  transform: translateX(-50%);
+  width: 16px;           /* szerokość słupka */
+  height: 72%;           /* maksymalna wysokość słupka */
+  border: 1px solid #333;
+  border-radius: 0px;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end; /* wypełnienie zawsze od dołu */
+}
+
+/* wypełnienie wskaźnika */
+.indicator-fill {
+  width: 100%;
+  background-color: #666666;
+  transition: height 0.5s ease;
+  border-radius: 0px;
 }

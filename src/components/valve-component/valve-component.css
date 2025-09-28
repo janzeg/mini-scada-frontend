@@ -5,25 +5,49 @@
   font-family: Arial, sans-serif;
   font-size: 12px;
   color: #555;
+  padding-bottom: 56px;
+  width: 51px;
+}
+
+.valve-indicator {
+  width: 51px;
+  padding: 2px 0;
+  margin-bottom: 6px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.valve-indicator.on {
+  background: #4640D4; 
+  color: white;
+}
+
+.valve-indicator.off {
+  background: #ffffff; 
+  color: rgb(0, 0, 0);
 }
 
 .valve-label {
   margin-bottom: 4px;
   font-weight: bold;
+  text-align: center;
 }
 
 .valve-image {
-  width: 51px;     /* dopasuj do grafiki */
+  width: 51px;
   height: auto;
   transition: filter 0.3s, opacity 0.3s;
-  padding-bottom: 14px;
 }
 
 /* Efekty dla stanów zaworu 
 .valve-image.open {
-  filter: hue-rotate(180deg) brightness(1.2); 
+  filter: hue-rotate(180deg) brightness(1.2);
+}
 
 .valve-image.closed {
-  opacity: 0.7; 
+  opacity: 0.7;
 }
 */

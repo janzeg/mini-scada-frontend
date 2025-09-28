@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class MixerComponent {
   @Input() name: string = 'Mieszalnik';
   @Input() state: 'ON' | 'OFF' = 'OFF';
+  level: number = 50; // 0-100% wysokości
 }

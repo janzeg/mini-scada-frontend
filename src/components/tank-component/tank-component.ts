@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './tank-component.css'
 })
 export class TankComponent {
-  @Input() level: number = 0; // 0-100% wysokości
-  @Input() name: string = '';
+  level: number = 50; // 0-100% wysokości
+  @Input() name: string = 'Zbiornik';
 }

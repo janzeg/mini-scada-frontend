@@ -3,21 +3,46 @@
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: #555;
-  margin-bottom: 50px;
+  margin-bottom: 90px;
 }
 
-.mixer-label {
-  margin-bottom: 4px;
-  font-weight: bold;
+.mixer-image-wrapper {
+  position: relative;
+  width: 230px;  
+  height: auto; 
 }
 
 .mixer-image {
-  width: 220px;
-  height: auto;
-  transition: filter 0.3s, opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
+
+.mixer-value {
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  width: 51px;
+  padding: 2px 0;
+  margin-bottom: 6px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  background-color: white;
+  color: #4640D4; 
+}
+
+.mixer-label {
+  position: absolute;
+  top: 85%;             /* pionowe wyśrodkowanie */
+  left: 50%;            /* poziome wyśrodkowanie */
+  transform: translate(-50%, -50%); /* dokładne wyśrodkowanie */
+  font-weight: bold;
+  text-align: center;
+}
+
 
 /* Efekty ON/OFF 
 .mixer-image.on {
@@ -28,3 +53,48 @@
   opacity: 0.6; /* przygaszony wygląd 
 }
 */
+
+.mixer-indicator {
+  width: 51px;
+  padding: 2px 0;
+  margin-bottom: 6px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.mixer-indicator.on {
+  background: #4640D4; 
+  color: white;
+}
+
+.mixer-indicator.off {
+  background: #ffffff; 
+  color: rgb(0, 0, 0);
+}
+
+/* ramka wskaźnika */
+.indicator {
+  position: absolute;
+  bottom: 16px;          /* odsuń od dna zbiornika */
+  left: 88%;
+  transform: translateX(-50%);
+  width: 20px;           /* szerokość słupka */
+  height: 90%;           /* maksymalna wysokość słupka */
+  border: 1px solid #333;
+  border-radius: 0px;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end; /* wypełnienie zawsze od dołu */
+}
+
+/* wypełnienie wskaźnika */
+.indicator-fill {
+  width: 100%;
+  background-color: #666666;
+  transition: height 0.5s ease;
+  border-radius: 0px;
+}

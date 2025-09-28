@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PumpComponent {
   @Input() name: string = 'Pompa';
-  @Input() state: 'ON' | 'OFF' = 'OFF';
+  state: 'ON' | 'OFF' = 'OFF';
 }

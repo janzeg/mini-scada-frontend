@@ -5,18 +5,41 @@
   font-family: Arial, sans-serif;
   font-size: 12px;
   color: #555;
+  padding-bottom: 52px;
+  width: 45px;
 }
 
 .pump-label {
   margin-bottom: 4px;
   font-weight: bold;
+  text-align: center;
 }
 
 .pump-image {
-  width: 43px;   /* dopasuj do grafiki */
+  width: 45px;   /* dopasuj do grafiki */
   height: auto;
   transition: filter 0.3s, opacity 0.3s;
-  padding-bottom: 14px;
+}
+
+.pump-indicator {
+  width: 51px;
+  padding: 2px 0;
+  margin-bottom: 6px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.pump-indicator.on {
+  background: #4640D4; 
+  color: white;
+}
+
+.pump-indicator.off {
+  background: #ffffff; 
+  color: rgb(0, 0, 0);
 }
 
 /* Efekty ON/OFF 
