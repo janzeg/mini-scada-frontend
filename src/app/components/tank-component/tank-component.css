@@ -25,7 +25,7 @@
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  width: 51px;
+  width: 66px;
   padding: 2px 0;
   margin-bottom: 6px;
   border: 1px solid #333;
@@ -64,6 +64,6 @@
 .indicator-fill {
   width: 100%;
   background-color: #666666;
-  transition: height 0.5s ease;
+  transition: height 0.5s ease, background-color 0.3s ease;
   border-radius: 0px;
 }

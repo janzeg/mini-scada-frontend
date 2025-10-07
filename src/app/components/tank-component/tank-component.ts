@@ -10,30 +10,44 @@ import { Subscription } from 'rxjs';
   styleUrl: './tank-component.css'
 })
 export class TankComponent {
-  level: number = 50; // 0-100% wysokości
+
   @Input() name: string = 'Zbiornik';
   @Input() id: number = 0;
-
-  private tankSub!: Subscription;
+  @Input() maxLevel: number = 1000;
+  level: number = 0;
+  levelPercent: number = 0;
+  alarm: boolean = false;
+  
+  private subs: Subscription[] = [];
 
   constructor(private tankService: TankService) { }
 
   ngOnInit(): void {
     this.tankService.connect();
 
-    this.tankSub = this.tankService.tank$.subscribe((data: TankData) => {
+    const connectSub = this.tankService.connected$.subscribe((connected) => {
+      if (connected) {
 
-      console.log("New value... " + " name = " + data.name + ", value = " + data.value)
+        // Subskrybuj dane dopiero po połączeniu
+        const levelSub = this.tankService.getTankStream(this.id, 'Level')
+          .subscribe((data: TankData) => {
+            this.level = Number(data.value);
+            this.levelPercent = (this.level / this.maxLevel) * 100;
+          });
 
-      const tankId = Number(data.name.split('/')[1]);
+        const alarmSub = this.tankService.getTankStream(this.id, 'Alarm')
+          .subscribe((data: TankData) => {
+            this.alarm = Boolean(data.value);
+          });
 
-      if (tankId === this.id) {
-        this.level = data.value;
+        this.subs.push(levelSub, alarmSub);
       }
     });
+
+    this.subs.push(connectSub);
   }
 
   ngOnDestroy(): void {
-    this.tankSub.unsubscribe();
+    this.subs.forEach(sub => sub.unsubscribe());
   }
 }
