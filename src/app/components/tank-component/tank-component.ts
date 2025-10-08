@@ -25,26 +25,19 @@ export class TankComponent {
   ngOnInit(): void {
     this.tankService.connect();
 
-    const connectSub = this.tankService.connected$.subscribe((connected) => {
-      if (connected) {
+    const levelSub = this.tankService.getTankStream(this.id, 'Level')
+      .subscribe((data: TankData) => {
+        this.level = Number(data.value);
+        this.levelPercent = (this.level / this.maxLevel) * 100;
+      });
 
-        // Subskrybuj dane dopiero po połączeniu
-        const levelSub = this.tankService.getTankStream(this.id, 'Level')
-          .subscribe((data: TankData) => {
-            this.level = Number(data.value);
-            this.levelPercent = (this.level / this.maxLevel) * 100;
-          });
+    const alarmSub = this.tankService.getTankStream(this.id, 'Alarm')
+      .subscribe((data: TankData) => {
+        this.alarm = Boolean(data.value);
+      });
 
-        const alarmSub = this.tankService.getTankStream(this.id, 'Alarm')
-          .subscribe((data: TankData) => {
-            this.alarm = Boolean(data.value);
-          });
+    this.subs.push(levelSub, alarmSub);
 
-        this.subs.push(levelSub, alarmSub);
-      }
-    });
-
-    this.subs.push(connectSub);
   }
 
   ngOnDestroy(): void {

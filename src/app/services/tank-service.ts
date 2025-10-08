@@ -12,14 +12,15 @@ export class TankService {
   private tankSubject = new BehaviorSubject<TankData>({ name: '', value: 0 });
   tank$ = this.tankSubject.asObservable();
 
-  private connectedSubject = new BehaviorSubject<boolean>(false);
-  connected$ = this.connectedSubject.asObservable();
+  private connected = false;
 
   private client!: Client;
 
   constructor() { }
 
   public connect(): void {
+    if (this.connected) return; // nie łącz ponownie
+
     const socket = new SockJS('http://localhost:8090/ws');
 
     // Stwórz klienta STOMP
@@ -31,6 +32,7 @@ export class TankService {
     });
 
     this.client.onConnect = (frame) => {
+      this.connected = true;
       this.client.subscribe('/topic/Tank/**', (message: IMessage) => {
         if (message.body) {
           const data: TankData = JSON.parse(message.body);
@@ -39,7 +41,6 @@ export class TankService {
       });
 
       console.log('Connected to WebSocket', frame);
-      this.connectedSubject.next(true); // sygnalizuj, że połączenie jest gotowe
     };
 
     this.client.onStompError = (frame) => {
