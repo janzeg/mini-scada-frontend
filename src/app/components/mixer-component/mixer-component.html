@@ -1,11 +1,9 @@
 <div class="mixer-container">
 
+  
   <!-- Label i wartość -->
-  <div class="mixer-value">{{ level | number:'1.0-0' }} L</div>
-
-  <!-- prostokąt z napisem ON/OFF -->
-  <div class="mixer-indicator" [class.on]="state === 'ON'" [class.off]="state === 'OFF'">
-    {{ state === 'ON' ? 'ON' : 'OFF' }}
+  <div class="mixer-value" [style.color]="alarm ? 'red' : '#4640D4'">
+    {{ level | number:'1.1-1' }} L
   </div>
 
   <!-- Grafika zbiornika -->
@@ -14,12 +12,16 @@
 
     <!-- pionowy wskaźnik -->
     <div class="indicator">
-      <div class="indicator-fill" [style.height.%]="level"></div>
+      <div class="indicator-fill" 
+           [style.height.%]="levelPercent"
+           [style.background-color]="alarm ? 'red' : '#666666'">
+      </div>
     </div>
 
-    <div class="mixer-label">{{ name }}</div>
-     
-    <!-- <div class="level" [style.height.%]="level"></div> -->
+    <div class="mixer-label">
+      {{ name }}
+    </div>
+    
   </div>
 
   

@@ -23,7 +23,6 @@ export class TankComponent {
   constructor(private tankService: TankService) { }
 
   ngOnInit(): void {
-    this.tankService.connect();
 
     const levelSub = this.tankService.getTankStream(this.id, 'Level')
       .subscribe((data: TankData) => {
