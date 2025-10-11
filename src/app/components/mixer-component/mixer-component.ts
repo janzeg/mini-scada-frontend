@@ -28,15 +28,19 @@ export class MixerComponent {
       .subscribe((data: MixerData) => {
         this.level = Number(data.value);
         this.levelPercent = (this.level / this.maxLevel) * 100;
-        console.log("Mixer level " + this.level)
       });
 
     const alarmSub = this.mixerService.getMixerStream(this.id, 'Alarm')
       .subscribe((data: MixerData) => {
         this.alarm = Boolean(data.value);
-      });
+    });
 
-    this.subs.push(levelSub, alarmSub);
+    const activeSub = this.mixerService.getMixerStream(this.id, 'Active')
+      .subscribe((data: MixerData) => {
+        this.active = Boolean(data.value);
+    });
+
+    this.subs.push(levelSub, alarmSub, activeSub);
 
   }
 

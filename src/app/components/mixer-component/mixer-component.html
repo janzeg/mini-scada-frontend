@@ -1,5 +1,9 @@
 <div class="mixer-container">
 
+  <!-- prostokąt z napisem ON/OFF -->
+  <div class="mixer-indicator" [class.on]="active" [class.off]="!active">
+    {{ active ? 'ON' : 'OFF' }}
+  </div>
   
   <!-- Label i wartość -->
   <div class="mixer-value" [style.color]="alarm ? 'red' : '#4640D4'">

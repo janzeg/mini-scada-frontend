@@ -1,14 +1,12 @@
 <div class="pump-container">
   <!-- prostokąt z napisem ON/OFF -->
-  <div class="pump-indicator" [class.on]="state === 'ON'" [class.off]="state === 'OFF'">
-    {{ state === 'ON' ? 'ON' : 'OFF' }}
+  <div class="pump-indicator" [class.on]="active" [class.off]="!active">
+    {{ active ? 'ON' : 'OFF' }}
   </div>
 
   <div class="pump-label">{{ name }}</div>
 
   <img src="assets/images/pump.png"
        alt="Pompa"
-       class="pump-image"
-       [class.on]="state === 'ON'"
-       [class.off]="state === 'OFF'">
+       class="pump-image">
 </div>

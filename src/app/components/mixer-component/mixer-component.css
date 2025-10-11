@@ -8,6 +8,16 @@
   margin-bottom: 90px;
 }
 
+.mixer-indicator.on {
+  background: #4640D4; 
+  color: white;
+}
+
+.mixer-indicator.off {
+  background: #ffffff; 
+  color: rgb(0, 0, 0);
+}
+
 .mixer-image-wrapper {
   position: relative;
   width: 230px;  

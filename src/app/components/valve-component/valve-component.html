@@ -1,15 +1,12 @@
 <div class="valve-container">
-
   <!-- prostokąt z napisem ON/OFF -->
-  <div class="valve-indicator" [class.on]="state === 'OPEN'" [class.off]="state === 'CLOSED'">
-    {{ state === 'OPEN' ? 'ON' : 'OFF' }}
+  <div class="valve-indicator" [class.on]="active" [class.off]="!active">
+    {{ active ? 'ON' : 'OFF' }}
   </div>
 
   <div class="valve-label">{{ name }}</div>
 
   <img src="assets/images/valve.png"
        alt="Zawór"
-       class="valve-image"
-       [class.open]="state === 'OPEN'"
-       [class.closed]="state === 'CLOSED'">
+       class="valve-image">
 </div>
