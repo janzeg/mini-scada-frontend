@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProcessControlService, ProcessState } from '../../services/process-control-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -12,7 +13,8 @@ export class TopBar {
   processActive = false;
   processState: ProcessState = ProcessState.INIT;
 
-  constructor(private processControlService: ProcessControlService) {}
+  constructor(private processControlService: ProcessControlService,
+              private router: Router) {}
 
   ngOnInit(): void {
     // Subskrypcja stanu procesu
@@ -23,7 +25,7 @@ export class TopBar {
     });
   }
 
-  startStopProcess(): void {
+  onStartStopProcess(): void {
     if (!this.processActive) {
       // start process
       this.processControlService.startProcess().subscribe({
@@ -48,10 +50,22 @@ export class TopBar {
     return this.processStateLabels[this.processState] || 'Nieznany stan';
   }
 
+  onShowProcessView(): void {
+    this.router.navigate(['/process']); 
+  }
+
+  onShowRecipeManager(): void {
+    this.router.navigate(['/recipes']); 
+  }
+
+  onShowAlarms(): void {
+    this.router.navigate(['/alarms']); 
+  }
+
 
   private processStateLabels: { [key in ProcessState]: string } = {
     [ProcessState.INIT]: 'INICJALIZACJA',
-    [ProcessState.WAITING_FOR_RECIPE_SELECTION]: 'OCZEKIWANIE NA WYBÓR RECEPTURY',
+    [ProcessState.WAITING_FOR_RECIPE_SELECTION]: 'OCZEKIWANIE NA WYBÓR ZLECENIA',
     [ProcessState.STANDBY]: 'OCZEKIWANIE NA START',
     [ProcessState.FILLING_INPUT_TANKS]: 'NAPEŁNIANIE ZBIORNIKÓW WEJŚCIOWYCH',
     [ProcessState.FILLING_MIXER]: 'NAPEŁNIANIE MIESZALNIKA',

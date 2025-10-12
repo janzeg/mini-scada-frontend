@@ -9,6 +9,9 @@ import { PumpComponent } from './components/pump-component/pump-component';
 import { MixerComponent } from './components/mixer-component/mixer-component';
 import { TopBar } from './components/top-bar/top-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { ProcessView } from './components/process-view/process-view';
+import { RecipeManagerComponent } from './components/recipe-manager-component/recipe-manager-component';
+import { AlarmsComponent } from './components/alarms-component/alarms-component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
     ValveComponent,
     PumpComponent,
     MixerComponent,
-    TopBar
+    TopBar,
+    ProcessView,
+    RecipeManagerComponent,
+    AlarmsComponent
   ],
   imports: [
     BrowserModule,

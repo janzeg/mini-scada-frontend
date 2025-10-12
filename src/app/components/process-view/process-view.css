@@ -1,0 +1,57 @@
+
+.process-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 60px;        
+}
+
+
+.tanks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* żeby układy były wyśrodkowane do lewej */
+  gap: 10px;              /* odstęp między wierszami */
+}
+
+.tank-input-line {
+  display: flex;
+  align-items: center;
+}
+
+.tank-output-line-one {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.tank-output-line-two {
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.tank-section {
+  display: flex;
+  align-items: center;
+}
+
+.connector {
+  width: 90px;       /* długość linii łączącej elementy */
+  height: 3px;        /* grubość linii */
+  background: #333;   /* kolor linii */
+}
+
+.tank-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* żeby układy były wyśrodkowane do lewej */
+  gap: 2px;              /* odstęp między wierszami */
+  padding-bottom: 60px;
+}
+
+
+img.arrowhead {
+  width: 22px;
+  height: auto; /* zachowuje proporcje */
+}

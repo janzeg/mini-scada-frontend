@@ -3,12 +3,15 @@
     <button 
       class="top-button" 
       [ngClass]="processActive ? 'stop' : 'start'"
-      (click)="startStopProcess()">
+      (click)="onStartStopProcess()">
       {{ processActive ? 'Stop' : 'Start' }}
     </button>
 
-    <button class="top-button">Receptury</button>
-    <button class="top-button">Alarmy</button>
+    <button class="top-button" (click)="onShowProcessView()">Podgląd procesu</button>
+    <button class="top-button">Zlecenia</button>
+    <button class="top-button" (click)="onShowRecipeManager()">Receptury</button>
+    <button class="top-button">Historia zleceń</button>
+    <button class="top-button" (click)="onShowAlarms()">Alarmy</button>
   </div>
 
   <div class="right-status">
