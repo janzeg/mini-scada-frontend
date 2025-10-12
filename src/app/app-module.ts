@@ -7,6 +7,8 @@ import { TankComponent } from './components/tank-component/tank-component';
 import { ValveComponent } from './components/valve-component/valve-component';
 import { PumpComponent } from './components/pump-component/pump-component';
 import { MixerComponent } from './components/mixer-component/mixer-component';
+import { TopBar } from './components/top-bar/top-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { MixerComponent } from './components/mixer-component/mixer-component';
     TankComponent,
     ValveComponent,
     PumpComponent,
-    MixerComponent
+    MixerComponent,
+    TopBar
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

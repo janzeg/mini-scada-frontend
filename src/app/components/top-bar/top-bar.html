@@ -1,0 +1,17 @@
+<div class="top-bar">
+  <div class="left-buttons">
+    <button 
+      class="top-button" 
+      [ngClass]="processActive ? 'stop' : 'start'"
+      (click)="startStopProcess()">
+      {{ processActive ? 'Stop' : 'Start' }}
+    </button>
+
+    <button class="top-button">Receptury</button>
+    <button class="top-button">Alarmy</button>
+  </div>
+
+  <div class="right-status">
+    <span class="state-label">{{ processStateLabel }}</span>
+  </div>
+</div>

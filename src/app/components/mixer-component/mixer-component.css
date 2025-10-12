@@ -8,16 +8,6 @@
   margin-bottom: 90px;
 }
 
-.mixer-indicator.on {
-  background: #4640D4; 
-  color: white;
-}
-
-.mixer-indicator.off {
-  background: #ffffff; 
-  color: rgb(0, 0, 0);
-}
-
 .mixer-image-wrapper {
   position: relative;
   width: 230px;  
@@ -54,7 +44,7 @@
 }
 
 .mixer-indicator {
-  width: 51px;
+  width: 66px;
   padding: 2px 0;
   margin-bottom: 6px;
   border: 1px solid #333;
@@ -88,6 +78,7 @@
   z-index: 1;
   display: flex;
   align-items: flex-end; /* wypełnienie zawsze od dołu */
+  font-size: 12px;
 }
 
 /* wypełnienie wskaźnika */

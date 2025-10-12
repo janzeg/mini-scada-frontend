@@ -7,7 +7,7 @@ import { WebSocketManagerService } from './web-socket-manager-service';
 })
 export class ValveService {
   
-private topic = '/topic/Valve/**';
+  private topic = '/topic/Valve/**';
   public valve$!: Observable<ValveData>;
 
   constructor(private wsManager: WebSocketManagerService) { 
