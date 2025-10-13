@@ -1,0 +1,26 @@
+.table-hover tbody tr:hover {
+  background-color: #eef9ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-success {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+.btn-success:hover {
+  background-color: #17a589;
+  border-color: #17a589;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+button.btn {
+  transition: all 0.2s;
+}
+
+button.btn:hover {
+  transform: scale(1.05);
+}

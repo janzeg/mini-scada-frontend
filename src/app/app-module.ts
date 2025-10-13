@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProcessView } from './components/process-view/process-view';
 import { RecipeManagerComponent } from './components/recipe-manager-component/recipe-manager-component';
 import { AlarmsComponent } from './components/alarms-component/alarms-component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AlarmsComponent } from './components/alarms-component/alarms-component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

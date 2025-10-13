@@ -1,1 +1,111 @@
-<p>recipe-manager-component works!</p>
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-primary">🧪 Lista receptur</h2>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRecipeModal">
+      ➕ Dodaj recepturę
+    </button>
+  </div>
+
+  <!-- TABELA -->
+  <div class="card shadow-sm">
+    <div class="card-body p-0">
+      <table class="table table-hover mb-0 align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Nazwa</th>
+            <th>T1 [L]</th>
+            <th>T2 [L]</th>
+            <th>Czas [min:s]</th>
+            <th class="text-center">Wybierz</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recipe of recipes" 
+              (click)="selectRecipe(recipe)" 
+              [class.table-active]="recipe === selectedRecipe"
+              style="cursor: pointer;">
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.ingredientT1 }}</td>
+            <td>{{ recipe.ingredientT2 }}</td>
+            <td>{{ recipe.mixTime.minutes }}:{{ recipe.mixTime.seconds | number:'2.0' }}</td>
+            <td class="text-center">
+              <button 
+                class="btn btn-sm"
+                [class.btn-primary]="recipe === selectedRecipe"
+                [class.btn-outline-primary]="recipe !== selectedRecipe"
+                (click)="selectRecipe(recipe); $event.stopPropagation()">
+                {{ recipe === selectedRecipe ? 'Wybrano' : 'Wybierz' }}
+              </button>
+
+              <!-- PRZYCISK USUŃ -->
+              <button 
+                  class="btn btn-sm btn-danger ms-3"
+                  (click)="deleteRecipe(recipe); $event.stopPropagation()">
+                  Usuń
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- WYBRANA RECEPTURA -->
+  <div *ngIf="selectedRecipe" class="mt-4">
+    <div class="card border-primary shadow-sm">
+      <div class="card-header bg-primary text-white">
+        Wybrana receptura
+      </div>
+      <div class="card-body">
+        <h5 class="card-title mb-3">{{ selectedRecipe.name }}</h5>
+        <p class="card-text mb-1">💧 Składnik T1: <strong>{{ selectedRecipe.ingredientT1 }} L</strong></p>
+        <p class="card-text mb-1">💧 Składnik T2: <strong>{{ selectedRecipe.ingredientT2 }} L</strong></p>
+        <p class="card-text">⏱️ Czas mieszania: <strong>{{ selectedRecipe.mixTime.minutes }} min {{ selectedRecipe.mixTime.seconds }} s</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Dodawanie nowej receptury -->
+<div class="modal fade" id="addRecipeModal" tabindex="-1" aria-labelledby="addRecipeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRecipeModalLabel">➕ Dodaj nową recepturę</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Nazwa receptury</label>
+            <input type="text" class="form-control" [(ngModel)]="newRecipe.name" name="name">
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="form-label">Składnik T1 [L]</label>
+              <input type="number" class="form-control" [(ngModel)]="newRecipe.ingredientT1" name="t1">
+            </div>
+            <div class="col">
+              <label class="form-label">Składnik T2 [L]</label>
+              <input type="number" class="form-control" [(ngModel)]="newRecipe.ingredientT2" name="t2">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <label class="form-label">Czas [min]</label>
+              <input type="number" class="form-control" [(ngModel)]="newRecipe.mixTime.minutes" name="minutes">
+            </div>
+            <div class="col">
+              <label class="form-label">Czas [sek]</label>
+              <input type="number" class="form-control" [(ngModel)]="newRecipe.mixTime.seconds" name="seconds">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+        <button type="button" class="btn btn-success" (click)="addRecipe()">Zapisz</button>
+      </div>
+    </div>
+  </div>
+</div>
