@@ -52,18 +52,28 @@
 
   <!-- WYBRANA RECEPTURA -->
   <div *ngIf="selectedRecipe" class="mt-4">
-    <div class="card border-primary shadow-sm">
-      <div class="card-header bg-primary text-white">
-        Wybrana receptura
-      </div>
-      <div class="card-body">
+  <div class="card border-primary shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Wybrana receptura
+    </div>
+    <div class="card-body d-flex flex-wrap align-items-center">
+      <div class="me-4">
         <h5 class="card-title mb-3">{{ selectedRecipe.name }}</h5>
         <p class="card-text mb-1">💧 Składnik T1: <strong>{{ selectedRecipe.ingredientT1 }} L</strong></p>
         <p class="card-text mb-1">💧 Składnik T2: <strong>{{ selectedRecipe.ingredientT2 }} L</strong></p>
         <p class="card-text">⏱️ Czas mieszania: <strong>{{ selectedRecipe.mixTime.minutes }} min {{ selectedRecipe.mixTime.seconds }} s</strong></p>
       </div>
+
+      <div class="pie-chart">
+        <canvas #pieChart></canvas>
+      </div>
+
     </div>
   </div>
+</div>
+
+
+  
 </div>
 
 <!-- MODAL: Dodawanie nowej receptury -->

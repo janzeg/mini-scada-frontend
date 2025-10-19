@@ -24,3 +24,10 @@ button.btn {
 button.btn:hover {
   transform: scale(1.05);
 }
+
+.pie-chart {
+  width: 125px;       /* szerokość wykresu */
+  height: 125px;      /* wysokość wykresu */
+  margin-left: auto;  /* przesuwa wykres maksymalnie w prawo */
+}
+
