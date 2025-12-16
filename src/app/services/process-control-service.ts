@@ -26,8 +26,10 @@ export class ProcessControlService {
     });         
   }
 
-  startProcess(): Observable<any> {
-    return this.http.post(`${this.baseUrl}/start`, {});
+  startProcess(orderId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/start`, {
+      orderId: orderId
+    });
   }
 
   stopProcess(): Observable<any> {

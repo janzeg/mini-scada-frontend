@@ -16,7 +16,7 @@
             <th>T1 [L]</th>
             <th>T2 [L]</th>
             <th>Czas [min:s]</th>
-            <th class="text-center">Wybierz</th>
+            <th class="text-center"></th>
           </tr>
         </thead>
         <tbody>
@@ -29,14 +29,14 @@
             <td>{{ recipe.ingredientT2 }}</td>
             <td>{{ recipe.mixTime.minutes }}:{{ recipe.mixTime.seconds | number:'2.0' }}</td>
             <td class="text-center">
+              <!--
               <button 
                 class="btn btn-sm"
                 [class.btn-primary]="recipe === selectedRecipe"
                 [class.btn-outline-primary]="recipe !== selectedRecipe"
                 (click)="selectRecipe(recipe); $event.stopPropagation()">
                 {{ recipe === selectedRecipe ? 'Wybrano' : 'Wybierz' }}
-              </button>
-
+              </button>-->
               <!-- PRZYCISK USUŃ -->
               <button 
                   class="btn btn-sm btn-danger ms-3"

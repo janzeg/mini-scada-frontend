@@ -1,0 +1,82 @@
+<div class="container mt-4">
+
+  <h2 class="text-primary mb-3">📦 Zlecenia</h2>
+
+  <!-- LISTA ZAMÓWIEŃ -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body p-0">
+      <table class="table mb-0 table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Receptury</th>
+            <th>Data utworzenia</th>
+            <th>Deadline</th>
+            <th>Wykonane</th>
+            <th class="text-center">Akcje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders"
+            (click)="selectOrder(order)"
+            [class.table-primary]="selectedOrder?.id === order.id"
+            style="cursor: pointer">
+
+          <td>{{ order.id }}</td>
+
+          <td>
+            <span *ngFor="let r of order.recipes" class="badge bg-primary me-1">
+              {{ r.name }}
+            </span>
+          </td>
+
+          <td>{{ order.createdAt | date: 'yyyy-MM-dd HH:mm' }}</td>
+          <td>{{ order.deadline | date: 'yyyy-MM-dd HH:mm' }}</td>
+          <td>
+            {{ order.finishedAt ? (order.finishedAt | date:'yyyy-MM-dd HH:mm') : '-' }}
+          </td>
+
+          <td class="text-center">
+            <button class="btn btn-danger btn-sm"
+                    (click)="deleteOrder(order); $event.stopPropagation()">
+              Usuń
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="selectedOrder" class="alert alert-info mt-3">
+    <strong>Wybrane zlecenie:</strong>
+    #{{ selectedOrder.id }}
+    | deadline: {{ selectedOrder.deadline | date:'yyyy-MM-dd HH:mm' }}
+  </div>
+
+  <br><br>
+  <h3 class="text-success">➕ Dodaj nowe zlecenie</h3>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+
+      <label class="form-label">Wybierz receptury:</label>
+      
+      <div class="mb-3">
+        <button 
+          class="btn btn-outline-primary me-2 mb-2"
+          *ngFor="let recipe of recipes"
+          [class.active]="isRecipeSelected(recipe)"
+          (click)="toggleRecipeInOrder(recipe)">
+          {{ recipe.name }}
+        </button>
+      </div>
+
+      <label class="form-label">Należy wykonać do:</label>
+      <input type="datetime-local" class="form-control mb-3" [(ngModel)]="newOrder.deadline">
+
+      <button class="btn btn-success w-100" (click)="addOrder()">Zapisz zlecenie</button>
+
+    </div>
+  </div>
+</div>

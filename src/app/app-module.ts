@@ -13,6 +13,7 @@ import { ProcessView } from './components/process-view/process-view';
 import { RecipeManagerComponent } from './components/recipe-manager-component/recipe-manager-component';
 import { AlarmsComponent } from './components/alarms-component/alarms-component';
 import { FormsModule } from '@angular/forms';
+import { OrderManagerComponent } from './components/order-manager-component/order-manager-component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     TopBar,
     ProcessView,
     RecipeManagerComponent,
-    AlarmsComponent
+    AlarmsComponent,
+    OrderManagerComponent
   ],
   imports: [
     BrowserModule,
