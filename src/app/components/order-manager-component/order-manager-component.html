@@ -12,8 +12,8 @@
             <th>Receptury</th>
             <th>Data utworzenia</th>
             <th>Deadline</th>
-            <th>Wykonane</th>
-            <th class="text-center">Akcje</th>
+            <!--<th>Wykonane</th>-->
+            <th class="text-center"></th>
           </tr>
         </thead>
         <tbody>
@@ -32,9 +32,11 @@
 
           <td>{{ order.createdAt | date: 'yyyy-MM-dd HH:mm' }}</td>
           <td>{{ order.deadline | date: 'yyyy-MM-dd HH:mm' }}</td>
+          <!--
           <td>
             {{ order.finishedAt ? (order.finishedAt | date:'yyyy-MM-dd HH:mm') : '-' }}
           </td>
+          -->
 
           <td class="text-center">
             <button class="btn btn-danger btn-sm"
